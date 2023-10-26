@@ -1,3 +1,5 @@
+package Truck;
+
 public class SmallTruck implements Truck {
     private String type;
     private String dock;

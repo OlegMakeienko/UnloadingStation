@@ -1,3 +1,8 @@
+import Truck.Truck;
+import Truck.Van;
+import Truck.SmallTruck;
+import Truck.HeavyTruck;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
