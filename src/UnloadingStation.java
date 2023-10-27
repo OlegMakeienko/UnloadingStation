@@ -2,6 +2,7 @@ import truck.Truck;
 import truck.Van;
 import truck.LightTruck;
 import truck.HeavyTruck;
+import typesAvVehicle.VehicleFactory;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -69,21 +70,24 @@ public class UnloadingStation {
 
         if (dock != null) {
             Truck truck = null;
-
-            if (truckTypeChoice == 1) {
-                System.out.print("Weight of the Van: ");
-                double weight = scanner.nextDouble();
-                truck = new Van(weight);
-            } else if (truckTypeChoice == 2) {
-                System.out.print("Weight of the Small Truck: ");
-                double weight = scanner.nextDouble();
-                truck = new LightTruck(weight);
-            } else if (truckTypeChoice == 3) {
-                System.out.print("Weight of the Heavy Truck: ");
-                double weight = scanner.nextDouble();
-                truck = new HeavyTruck(weight);
-            } else {
-                System.out.println("Invalid truck type.");
+            switch (truckTypeChoice) {
+                case 1:
+                    System.out.print("Weight of the Van: ");
+                    double weight = scanner.nextDouble();
+                    truck = VehicleFactory.createVan(weight);
+                    break;
+                case 2:
+                    System.out.print("Weight of the Small Truck: ");
+                    weight = scanner.nextDouble();
+                    truck = VehicleFactory.createLightTruck(weight);
+                    break;
+                case 3:
+                    System.out.print("Weight of the Heavy Truck: ");
+                    weight = scanner.nextDouble();
+                    truck = VehicleFactory.createHeavyTruck(weight);
+                    break;
+                default:
+                    System.out.println("Invalid truck type.");
             }
 
             if (truck != null) {
