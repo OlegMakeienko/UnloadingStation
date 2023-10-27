@@ -1,18 +1,9 @@
 package Truck;
 
-public class HeavyTruck implements Truck {
-    private String type;
-    private String dock;
-    private double weight;
+import typesAvVehicle.TypeAvVehicle;
 
-    public HeavyTruck(String type, String dock, double weight) {
-        this.type = type;
-        this.dock = dock;
-        this.weight = weight;
-    }
-
-    @Override
-    public String getInfo() {
-        return type + " at dock " + dock + " with weight " + weight + " tons";
+public class HeavyTruck extends Truck {
+    public HeavyTruck(int weight, String type) {
+        super(weight, TypeAvVehicle.HEAVY_TRUCK);
     }
 }

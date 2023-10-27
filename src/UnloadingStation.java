@@ -1,6 +1,6 @@
 import Truck.Truck;
 import Truck.Van;
-import Truck.SmallTruck;
+import Truck.LightTruck;
 import Truck.HeavyTruck;
 
 import java.util.ArrayList;
@@ -75,7 +75,7 @@ public class UnloadingStation {
             } else if (truckTypeChoice == 2) {
                 System.out.print("Weight of the Small Truck: ");
                 double weight = scanner.nextDouble();
-                truck = new SmallTruck("Small Truck", dock, weight);
+                truck = new LightTruck("Small Truck", dock, weight);
             } else if (truckTypeChoice == 3) {
                 System.out.print("Weight of the Heavy Truck: ");
                 double weight = scanner.nextDouble();
