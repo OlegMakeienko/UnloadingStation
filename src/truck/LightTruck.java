@@ -1,9 +1,9 @@
-package Truck;
+package truck;
 
 import typesAvVehicle.TypeAvVehicle;
 
 public class LightTruck extends Truck {
-    public LightTruck(int weight, String type) {
+    public LightTruck(double weight) {
         super(weight, TypeAvVehicle.LIGHT_TRUCK);
     }
 }

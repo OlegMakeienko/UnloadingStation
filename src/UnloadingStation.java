@@ -1,13 +1,15 @@
-import Truck.Truck;
-import Truck.Van;
-import Truck.LightTruck;
-import Truck.HeavyTruck;
+import truck.Truck;
+import truck.Van;
+import truck.LightTruck;
+import truck.HeavyTruck;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+
+import static java.lang.Integer.parseInt;
 
 public class UnloadingStation {
     public static void main(String[] args) {
@@ -26,7 +28,7 @@ public class UnloadingStation {
             System.out.println("2. Register a New Unloading Truck");
             System.out.println("3. Exit");
             System.out.print("Select from the list: ");
-            int choice = Integer.parseInt(scanner.nextLine());
+            int choice = scanner.nextInt();
 
             switch (choice) {
                 case 1:
@@ -51,7 +53,7 @@ public class UnloadingStation {
     static void viewDockedTrucks(List<Truck> dockedTrucks) {
         System.out.println("Parked Trucks:");
         for (Truck truck : dockedTrucks) {
-            System.out.println(truck.getInfo());
+            System.out.println(truck);
         }
     }
 
@@ -61,7 +63,7 @@ public class UnloadingStation {
         System.out.println("2. Small Truck");
         System.out.println("3. Heavy Truck");
         System.out.print("Select from the list: ");
-        int truckTypeChoice = Integer.parseInt(scanner.nextLine());
+        int truckTypeChoice = scanner.nextInt();
 
         String dock = DockLogic.assignDock(availableDocks, truckTypeChoice);
 
@@ -71,15 +73,15 @@ public class UnloadingStation {
             if (truckTypeChoice == 1) {
                 System.out.print("Weight of the Van: ");
                 double weight = scanner.nextDouble();
-                truck = new Van("Van", dock, weight);
+                truck = new Van(weight);
             } else if (truckTypeChoice == 2) {
                 System.out.print("Weight of the Small Truck: ");
                 double weight = scanner.nextDouble();
-                truck = new LightTruck("Small Truck", dock, weight);
+                truck = new LightTruck(weight);
             } else if (truckTypeChoice == 3) {
                 System.out.print("Weight of the Heavy Truck: ");
                 double weight = scanner.nextDouble();
-                truck = new HeavyTruck("Heavy Truck", dock, weight);
+                truck = new HeavyTruck(weight);
             } else {
                 System.out.println("Invalid truck type.");
             }

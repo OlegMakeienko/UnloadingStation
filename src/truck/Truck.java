@@ -1,15 +1,15 @@
-package Truck;
+package truck;
 
 public abstract class Truck {
-    private int weight;
+    private double weight;
     private String type;
 
-    public Truck(int weight, String type) {
+    public Truck(double weight, String type) {
         this.weight = weight;
         this.type = type;
     }
 
-    public int getWeight() {
+    public double getWeight() {
         return weight;
     }
 
