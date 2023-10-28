@@ -1,3 +1,4 @@
+import docks.Dock;
 import docks.DockLogic;
 import truck.Truck;
 import typesAvVehicle.VehicleFactory;
@@ -15,6 +16,7 @@ public class UnloadingStation {
         Scanner scanner = new Scanner(System.in);
         List<Truck> dockedTrucks = new ArrayList<>();
         Map<String, Integer> availableDocks = new HashMap<>();
+
         availableDocks.put("A", 1);
         availableDocks.put("B", 1);
         availableDocks.put("C", 1);
@@ -51,9 +53,7 @@ public class UnloadingStation {
 
     static void viewDockedTrucks(List<Truck> dockedTrucks) {
         System.out.println("Parked Trucks:");
-        for (Truck truck : dockedTrucks) {
-            System.out.println(truck);
-        }
+
     }
 
     static void registerTruck(Scanner scanner, List<Truck> dockedTrucks, Map<String, Integer> availableDocks) {
