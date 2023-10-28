@@ -1,7 +1,5 @@
+import docks.DockLogic;
 import truck.Truck;
-import truck.Van;
-import truck.LightTruck;
-import truck.HeavyTruck;
 import typesAvVehicle.VehicleFactory;
 
 import java.util.ArrayList;
@@ -61,7 +59,7 @@ public class UnloadingStation {
     static void registerTruck(Scanner scanner, List<Truck> dockedTrucks, Map<String, Integer> availableDocks) {
         System.out.println("Type of truck:");
         System.out.println("1. Van");
-        System.out.println("2. Small Truck");
+        System.out.println("2. Light Truck");
         System.out.println("3. Heavy Truck");
         System.out.print("Select from the list: ");
         int truckTypeChoice = scanner.nextInt();
@@ -77,7 +75,7 @@ public class UnloadingStation {
                     truck = VehicleFactory.createVan(weight);
                     break;
                 case 2:
-                    System.out.print("Weight of the Small Truck: ");
+                    System.out.print("Weight of the Light Truck: ");
                     weight = scanner.nextDouble();
                     truck = VehicleFactory.createLightTruck(weight);
                     break;

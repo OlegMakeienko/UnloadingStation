@@ -1,7 +1,9 @@
+package docks;
+
 import java.util.Map;
 
 public class DockLogic {
-    static String assignDock(Map<String, Integer> availableDocks, int truckType) {
+    public static String assignDock(Map<String, Integer> availableDocks, int truckType) {
         for (Map.Entry<String, Integer> entry : availableDocks.entrySet()) {
             if (entry.getValue() > 0) {
                 if (truckType == 1) {
